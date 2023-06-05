@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4152593623544580563}
   - component: {fileID: 7454153501258602347}
   - component: {fileID: -2832647016050144403}
-  - component: {fileID: -5126261258737608047}
+  - component: {fileID: -1482901488424616393}
   - component: {fileID: 6353236448189628687}
   m_Layer: 0
   m_Name: cat_h
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6091369249253652721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 2.5
   m_Material: {fileID: 6200000, guid: d48e321677c5c004186638b16666b2cb, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
---- !u!114 &-5126261258737608047
+--- !u!114 &-1482901488424616393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6091369249253652721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d8527671246ba4ca6a437439e94c05, type: 3}
+  m_Script: {fileID: 11500000, guid: dae5aa8a4bf9cd3408a373aa3562ab3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cats:
@@ -148,8 +148,10 @@ MonoBehaviour:
   - {fileID: 6091369249253652721}
   - {fileID: 3300706000482828179, guid: 7b086ecdacc8def49847f930d662525e, type: 3}
   - {fileID: 1183997224112696827, guid: 7e03dd2163c07be43982c8e3293a7128, type: 3}
-  GRAVITY_SCALE: 1
+  GRAVITY_SCALE: 2.5
   level: 7
+  comboCounter: 0
+  isNewCat: 0
   isMerging: 0
   id: 0
 --- !u!114 &6353236448189628687
@@ -165,4 +167,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeForce: 3
-  shakeThreshold: 1
+  shakeThreshold: 0.1

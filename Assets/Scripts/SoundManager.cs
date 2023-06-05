@@ -5,7 +5,10 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     static public SoundManager instance;
-    public AudioSource nya;
+    public AudioSource BGMusic;
+    public AudioSource soundEffect;
+    public AudioClip nya;
+    public AudioClip pit;
     void Awake()
     {
         if (instance == null)
@@ -14,12 +17,17 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        nya = GetComponent<AudioSource>();
+        soundEffect = GetComponent<AudioSource>();
     }
 
-    public void PlaySound() 
+    public void PlayMergeSound() 
     {
-        nya.Play();
+        soundEffect.PlayOneShot(nya);
+    }
+
+    public void PlayPitSound()
+    {
+        soundEffect.PlayOneShot(pit);
     }
 
 }

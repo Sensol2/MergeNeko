@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1183997224112696820}
   - component: {fileID: 4435966750644036182}
   - component: {fileID: 811609596146773108}
-  - component: {fileID: 259390869118847057}
+  - component: {fileID: -4108110538137726087}
   - component: {fileID: -6377893260192224013}
   m_Layer: 0
   m_Name: cat_j
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 2.5
   m_Material: {fileID: 6200000, guid: d48e321677c5c004186638b16666b2cb, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 4.9999995
---- !u!114 &259390869118847057
+--- !u!114 &-4108110538137726087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1183997224112696827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d8527671246ba4ca6a437439e94c05, type: 3}
+  m_Script: {fileID: 11500000, guid: dae5aa8a4bf9cd3408a373aa3562ab3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cats:
@@ -148,8 +148,10 @@ MonoBehaviour:
   - {fileID: 6091369249253652721, guid: 6553963f322b2bd4e9bad17cfad6a0a0, type: 3}
   - {fileID: 3300706000482828179, guid: 7b086ecdacc8def49847f930d662525e, type: 3}
   - {fileID: 1183997224112696827}
-  GRAVITY_SCALE: 1
+  GRAVITY_SCALE: 2.5
   level: 9
+  comboCounter: 0
+  isNewCat: 0
   isMerging: 0
   id: 0
 --- !u!114 &-6377893260192224013
@@ -165,4 +167,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeForce: 3
-  shakeThreshold: 1
+  shakeThreshold: 0.1

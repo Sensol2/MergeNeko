@@ -12,13 +12,14 @@ public class ScoreManager : MonoBehaviour
     public int[] scoreTable = { 5, 10, 30, 50, 100, 150, 300, 500, 1000, 3000 };
     public int feverNeed;
     public bool isFeverTime;
+    public float feverTimeDuration;
     private int score;
     private int feverScore;
 
     // 피버타임 이벤트
     public delegate void FeverTimeEvent();
-    public event FeverTimeEvent onFeverTimeStart;
-    public event FeverTimeEvent onFeverTimeEnd;
+    public static event FeverTimeEvent onFeverTimeStart;
+    public static event FeverTimeEvent onFeverTimeEnd;
 
     private void Awake()
     {
@@ -29,7 +30,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         isFeverTime = false;
-        
+        GameOverZone.OnGameOver += DisableFeverTime;
     }
 
     private void Update()
@@ -39,8 +40,14 @@ public class ScoreManager : MonoBehaviour
         if (feverScore >= feverNeed)
         {
             feverScore = 0;
+            feverNeed += 5000;
             EnableFeverTime();
         }
+    }
+
+    public void AddScore(int value)
+    {
+        this.score += value;
     }
 
     public void AddScoreByLevel(int level)
@@ -52,12 +59,16 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public int GetScore()
+    {
+        return this.score;
+    }
+
     public void EnableFeverTime()
     {
         isFeverTime = true;
         onFeverTimeStart?.Invoke();
-        feverTimeUI.FeverAnimation();
-        StartCoroutine(FeverTimer(10.0f));
+        StartCoroutine(FeverTimer(feverTimeDuration));
     }
 
     IEnumerator FeverTimer(float time)
@@ -67,4 +78,15 @@ public class ScoreManager : MonoBehaviour
         onFeverTimeEnd?.Invoke();
     }
 
+    void DisableFeverTime()
+    {
+        GameOverZone.OnGameOver -= DisableFeverTime;
+        this.gameObject.SetActive(false);
+    }
+
+    public void ResetFeverEvent()
+    {
+        onFeverTimeStart = null;
+        onFeverTimeEnd = null;
+    }
 }

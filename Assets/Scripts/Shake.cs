@@ -16,8 +16,8 @@ public class Shake : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         // 이벤트 리스너 등록
-        ScoreManager.instance.onFeverTimeStart += EnterFeverTime;
-        ScoreManager.instance.onFeverTimeEnd += ExitFeverTime;
+        ScoreManager.onFeverTimeStart += EnterFeverTime;
+        ScoreManager.onFeverTimeEnd += ExitFeverTime;
     }
 
     void Update()
@@ -53,7 +53,7 @@ public class Shake : MonoBehaviour
     void OnDestroy()
     {
         // 이벤트 리스너 해제
-        ScoreManager.instance.onFeverTimeStart -= EnterFeverTime;
-        ScoreManager.instance.onFeverTimeEnd -= ExitFeverTime;
+        ScoreManager.onFeverTimeStart -= EnterFeverTime;
+        ScoreManager.onFeverTimeEnd -= ExitFeverTime;
     }
 }

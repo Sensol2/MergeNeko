@@ -11,6 +11,8 @@ public class CatController : MonoBehaviour
     public GameObject[] cats;
     public float dropSpeed;
     public float GravityScale;
+    public float generateDelay;
+    public float scaleDelay;
 
 	private void Awake()
 	{
@@ -21,9 +23,10 @@ public class CatController : MonoBehaviour
 	void Start()
     {
         GenerateCat();
+        GameOverZone.OnGameOver += OnDisableWhenGameOver;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
@@ -39,18 +42,18 @@ public class CatController : MonoBehaviour
     void GenerateCat()
     {
         int maxLevel = LevelManager.instance.GetLevel();
-        if (maxLevel <= 5)
+        if (maxLevel <= 4)
         {
             spawnedCat = Instantiate(cats[Random.Range(0, maxLevel)], new Vector3(0, 4, 0), Quaternion.identity);
         }
         else
         {
-            spawnedCat = Instantiate(cats[Random.Range(0, 5)], new Vector3(0, 4, 0), Quaternion.identity);
+            spawnedCat = Instantiate(cats[Random.Range(0, 4)], new Vector3(0, 4, 0), Quaternion.identity);
         }
         // 생성될때 사이즈 커지게
         var originScale = spawnedCat.transform.localScale;
         spawnedCat.transform.localScale = new Vector3(0, 0, 0);
-        spawnedCat.transform.DOScale(originScale, 0.1f);
+        spawnedCat.transform.DOScale(originScale, scaleDelay);
 
         spawnedCat.GetComponent<CircleCollider2D>().enabled = false;
         spawnedCat.GetComponent<Rigidbody2D>().isKinematic = true;
@@ -75,11 +78,12 @@ public class CatController : MonoBehaviour
         spawnedCat.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -dropSpeed, 0);
         spawnedCat.GetComponent<CircleCollider2D>().enabled = true;
         spawnedCat.GetComponent<Rigidbody2D>().isKinematic = false;
+        spawnedCat.GetComponent<Cat>().isNewCat = true;
 
         spawnedCat = null;
 
         // 1초 후에 GenerateCat() 코루틴을 호출합니다.
-        StartCoroutine(GenerateCatWithDelay(0.1f));
+        StartCoroutine(GenerateCatWithDelay(generateDelay));
     }
 
     IEnumerator GenerateCatWithDelay(float delay)
@@ -89,5 +93,11 @@ public class CatController : MonoBehaviour
 
         // 대기 시간이 끝난 후에 GenerateCat() 메서드를 호출합니다.
         GenerateCat();
+    }
+
+    public void OnDisableWhenGameOver()
+    {
+        GameOverZone.OnGameOver -= OnDisableWhenGameOver;
+        gameObject.SetActive(false);
     }
 }
