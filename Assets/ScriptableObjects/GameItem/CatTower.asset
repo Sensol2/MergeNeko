@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d7d8618df9d6a49babeaf583856885, type: 3}
+  m_Name: CatTower
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: d2be97c8b9f5ba645a1bcb819ee86159, type: 3}
+  itemName: "\uCEA3\uD0C0\uC6CC"
+  itemDescription: "\uB192\uC740 \uACF3\uC744 \uC88B\uC544\uD558\uB294 \uACE0\uC591\uC774\uCC98\uB7FC,
+    \uAC8C\uC784\uC624\uBC84 \uC81C\uD55C\uC120\uC758 \uB192\uC774\uAC00 +n \uB9CC\uD07C
+    \uB192\uC544\uC9D1\uB2C8\uB2E4."
+  itemPrice: 0
+  KEY: GAMEITEM_CATTOWER
+  itemRank: 0
+  level: 0
+  maxLevel: 5
+  upgradeCost: 640000002c010000f4010000bc020000e8030000
+  effectType: 0
+  effectValues:
+  - 1
+  - 3
+  - 4
+  - 6
+  - 7

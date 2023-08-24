@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d7d8618df9d6a49babeaf583856885, type: 3}
+  m_Name: CatBox
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: c0e2b1aa419f0a5449f35b933a628418, type: 3}
+  itemName: "\uC0C1\uC790"
+  itemDescription: "\uC228\uACE0 \uC2F6\uC5B4\uC9C0\uB294 \uC0C1\uC790\uC785\uB2C8\uB2E4.
+    \uD53C\uBC84\uD0C0\uC784\uC758 \uC9C0\uC18D\uC2DC\uAC04\uC774 +n\uCD08 \uB298\uC5B4\uB0A9\uB2C8\uB2E4."
+  itemPrice: 0
+  KEY: GAMEITEM_CATBOX
+  itemRank: 0
+  level: 0
+  maxLevel: 5
+  upgradeCost: 640000002c010000f4010000bc020000e8030000
+  effectType: 0
+  effectValues:
+  - 0.5
+  - 1
+  - 1.5
+  - 2
+  - 2.5
