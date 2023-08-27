@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d7d8618df9d6a49babeaf583856885, type: 3}
+  m_Name: Bomb
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 2e8720b3d466e774d91313bc21ac3b6a, type: 3}
+  itemName: "\uD3ED\uD0C4"
+  itemDescription: "\uD3ED\uBC1C\uC744 \uC870\uC2EC\uD558\uC138\uC694! <color=#92d4f4><b>+{0}%</b></color>
+    \uD655\uB960\uB85C \uB4F1\uC7A5\uD558\uC5EC, \uB2FF\uC73C\uBA74 \uD130\uC9C0\uBA70
+    \uACE0\uC591\uC774\uB4E4\uC744 \uBC00\uC5B4\uB0C5\uB2C8\uB2E4."
+  itemPrice: 150
+  KEY: GAMEITEM_BOMB
+  itemRank: 1
+  level: 0
+  maxLevel: 5
+  upgradeCost: 640000002c010000f4010000bc02000000000000
+  effectValues:
+  - 2
+  - 3
+  - 5
+  - 7
+  - 10

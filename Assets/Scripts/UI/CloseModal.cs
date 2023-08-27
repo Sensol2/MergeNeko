@@ -10,4 +10,9 @@ public class CloseModal : MonoBehaviour
     {
         modal.SetActive(false);
     }
+
+    public void DestroyModalUI()
+    {
+        Destroy(modal);
+    }
 }

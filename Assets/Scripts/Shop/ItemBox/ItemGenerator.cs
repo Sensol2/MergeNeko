@@ -26,7 +26,7 @@ public class ItemGenerator : MonoBehaviour
         //모달창 생성
         GameObject obj = Instantiate(panel, canvas.transform, false);
         NewItemModal newItemModal = obj.GetComponent<NewItemModal>();
-        newItemModal.UpdateModalUI(selected);
+        newItemModal.CreateItemModal(selected);
         obj.transform.localScale = Vector3.zero;
         obj.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutExpo);
     }

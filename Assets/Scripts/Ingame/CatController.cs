@@ -43,8 +43,6 @@ public class CatController : MonoBehaviour
     {
         int maxLevel = LevelManager.instance.GetLevel();
 
-
-
         if (maxLevel <= 4)
         {
             spawnedCat = Instantiate(cats[Random.Range(0, maxLevel)], new Vector3(0, 4, 0), Quaternion.identity);

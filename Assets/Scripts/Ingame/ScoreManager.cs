@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour
     private int feverScore;
 
     // 피버타임 이벤트
+    public GameItem item_box;
     public delegate void FeverTimeEvent();
     public static event FeverTimeEvent onFeverTimeStart;
     public static event FeverTimeEvent onFeverTimeEnd;
@@ -27,13 +28,14 @@ public class ScoreManager : MonoBehaviour
             instance = this;
     }
 
-    private void Start()
+    void Start()
     {
-        isFeverTime = false;
+        Debug.Log("게임시작");
+        SetFevertimeDuration();
         GameOverZone.OnGameOver += DisableFeverTime;
     }
 
-    private void Update()
+    void Update()
     {
         this.scoreText.text = this.score.ToString();
 
@@ -64,10 +66,23 @@ public class ScoreManager : MonoBehaviour
         return this.score;
     }
 
+    // ==========
+    // 피버타임 관련
+    public void SetFevertimeDuration()
+    {
+        if (DataManager.instance.HasItem(item_box.KEY)) //Box 아이템 효과로 피버타임 지속시간 증가
+        {
+            int level = DataManager.instance.GetItemLevel(item_box.KEY);
+            float bonusSecond = item_box.effectValues[level];
+            feverTimeDuration += bonusSecond;
+        }
+    }
+
     public void EnableFeverTime()
     {
         isFeverTime = true;
         onFeverTimeStart?.Invoke();
+
         StartCoroutine(FeverTimer(feverTimeDuration));
     }
 

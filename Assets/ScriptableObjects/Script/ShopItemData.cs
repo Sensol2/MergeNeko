@@ -9,6 +9,8 @@ public class ShopItemData : ScriptableObject
     [SerializeField]
     public Sprite icon;
     public string itemName;
+
+    [TextArea]
     public string itemDescription;
     public int itemPrice;
 }

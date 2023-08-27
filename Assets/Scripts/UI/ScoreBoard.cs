@@ -4,16 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
+using Unity.VisualScripting;
 
 public class ScoreBoard : MonoBehaviour
 {
 
     public Image blackScreen;
-    public TMP_Text ResultScore;
-    public TMP_Text TimeText;
-    public TMP_Text MaxComboText;
-    public TMP_Text MergedCatText;
-    public TMP_Text GainedGemText;
+    public TMP_Text resultScore;
+    public TMP_Text timeText;
+    public TMP_Text maxComboText;
+    public TMP_Text mergedCatText;
+    public TMP_Text gainedGemText;
+
+    public GameItem item_yarn;
+    public GameItem item_toyrat;
+    public GameObject info_yarn;
+    public GameObject info_toyrat;
+
 
     [SerializeField] private float duration = 1f; // Animation duration
     [SerializeField] private Vector3 targetPosition; // The position where the banner will move to
@@ -30,22 +38,53 @@ public class ScoreBoard : MonoBehaviour
     //todo : 닫기 시 GameOverZone.OnGameOver -= DisplayScoreBoard;
     public void DisplayScoreBoard()
     {
-        float score;
-        score = ScoreManager.instance.GetScore();
+        //점수 계산
+        CalculateScore();
 
-        ResultScore.text = score.ToString();
-        TimeText.text = "TIME: " + TimeManager.instance.GetTimerText();
-        MaxComboText.text = "COMBO: " + ComboManager.instance.maxCombo.ToString();
-        MergedCatText.text = "MERGED CATS: " + Cat.mergedCats.ToString();
+        //Gem 계산
+        CalculateGem();
 
-        int gem;
-        gem = (int)(score * 0.01);
-        GainedGemText.text = gem.ToString();
-        DataManager.instance.SetGem(gem);
+        //기타 정보
+        timeText.text = "TIME: " + TimeManager.instance.GetTimerText();
+        maxComboText.text = "COMBO: " + ComboManager.instance.maxCombo.ToString();
+        mergedCatText.text = "MERGED CATS: " + Cat.mergedCats.ToString();
 
         blackScreen.DOFade(0.7f, 0.5f);
         transform.DOMove(targetPosition, duration).SetEase(Ease.OutElastic);
         GameOverZone.OnGameOver -= DisplayScoreBoard;
     }
 
+    private void CalculateScore()
+    {
+        GameItem item = item_yarn;
+        float score = ScoreManager.instance.GetScore();
+        if (DataManager.instance.HasItem(item.KEY))
+        {
+            int level = DataManager.instance.GetItemLevel(item.KEY);
+            int bonusScore = (int)(score * item.effectValues[item.level]/100);
+            ScoreManager.instance.AddScore(bonusScore);
+
+            info_yarn.SetActive(true);
+            info_yarn.transform.Find("Description").GetComponent<TMP_Text>().text = $"Bonus score: +{bonusScore}";
+        }
+        resultScore.text = score.ToString();
+    }
+
+    private void CalculateGem()
+    {
+        GameItem item = item_toyrat;
+        float score = ScoreManager.instance.GetScore();
+        int gem = (int)(score * 0.01);
+        int bonusGem = 0;
+        if (DataManager.instance.HasItem(item.KEY))
+        {
+            int level = DataManager.instance.GetItemLevel(item.KEY);
+            bonusGem = (int)(gem * item.effectValues[item.level]);
+
+            info_toyrat.SetActive(true);
+            info_toyrat.transform.Find("Description").GetComponent<TMP_Text>().text = $"Bonus Gem: +{bonusGem}";
+        }
+        DataManager.instance.SetGem(gem + bonusGem);
+        gainedGemText.text = gem.ToString();
+    }
 }

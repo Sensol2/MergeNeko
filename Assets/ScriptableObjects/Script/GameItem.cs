@@ -28,6 +28,34 @@ public class GameItem : ShopItemData
     public int level;
     public int maxLevel;
     public int[] upgradeCost;
-    public ItemEffectType effectType; // 아이템 효과 유형
     public float[] effectValues; // 레벨 별 효과 값
+
+    public string GetItemDescription(int level)
+    {
+        if (level >= 0 && level < effectValues.Length)
+        {
+            float value = effectValues[level];
+            if (value % 1 == 0) // 정수인 경우
+                return string.Format(itemDescription, value.ToString("0"));
+            else // 소수점인 경우
+                return string.Format(itemDescription, value.ToString("0.0"));
+        }
+        else
+            return "Invalid level.";
+    }
+
+    public string GetUpgradeDescription(int level)
+    {
+        if (level >= 0 && level + 1 < effectValues.Length)
+        {
+            float value = effectValues[level];
+            float nextValue = effectValues[level+1];
+            if (value % 1 == 0) // 정수인 경우
+                return string.Format("다음 아이템 효과: {0} > {1}", value.ToString("0"), nextValue.ToString("0"));
+            else // 소수점인 경우
+                return string.Format("다음 아이템 효과: {0} > {1}", value.ToString("0.0"), nextValue.ToString("0.0"));
+        }
+        else
+            return "MAX LEVEL";
+    }
 }

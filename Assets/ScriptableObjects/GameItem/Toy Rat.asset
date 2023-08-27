@@ -16,13 +16,13 @@ MonoBehaviour:
   itemName: "\uC950 \uC778\uD615"
   itemDescription: "\uD589\uC6B4\uC744 \uAC00\uC838\uB2E4\uC8FC\uB294 \uC778\uD615\uC73C\uB85C,
     \uAC8C\uC784 \uC885\uB8CC \uC2DC \uD68D\uB4DD\uD558\uB294 \uACE8\uB4DC\uB97C
-    \uB298\uB824\uC90D\uB2C8\uB2E4."
-  itemPrice: 0
+    <color=#92d4f4><b>+{0}</b></color>%\uB9CC\uD07C \uB298\uB824\uC90D\uB2C8\uB2E4."
+  itemPrice: 100
   KEY: GAMEITEM_TOYRAT
   itemRank: 0
   level: 0
   maxLevel: 5
-  upgradeCost: 640000002c010000f4010000bc020000e8030000
+  upgradeCost: 640000002c010000f4010000bc02000000000000
   effectType: 1
   effectValues:
   - 2

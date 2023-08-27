@@ -367,7 +367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7995349841590687252, guid: 2fff048c51811834f8cc12f13db4c862, type: 3}
       propertyPath: m_Name
-      value: GemTextarea
+      value: GemTextArea
       objectReference: {fileID: 0}
     - target: {fileID: 7995349841590687253, guid: 2fff048c51811834f8cc12f13db4c862, type: 3}
       propertyPath: m_Pivot.x
@@ -688,10 +688,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 53c2d0ecf65eaa64ea54947af06925ff, type: 2}
   - {fileID: 11400000, guid: 3596de46a5b00a54699f1fbace96ec40, type: 2}
   - {fileID: 11400000, guid: a89c27ddeddf6f3408cfcde309697bbc, type: 2}
+  - {fileID: 11400000, guid: 5f03f4ed5959c6b429b5b0a336951e55, type: 2}
   itemSlot_Unknown: {fileID: 5310550589016107767, guid: 2aecd202f2899ce448e42d409dc14bc8, type: 3}
   itemSlot_Normal: {fileID: 15436248334062167, guid: bebd2be1976d223459c8e24d50f31fb3, type: 3}
-  itemSlot_Epic: {fileID: 4799387880119934188, guid: b3f32c955c440c047b2f364a747ef00d, type: 3}
-  itemSlot_Legendary: {fileID: 6625828758155686110, guid: 582f4a48f4950d3499a163053dd257c1, type: 3}
+  itemSlot_Epic: {fileID: 15436248334062167, guid: b8d741f877d99f9409bc93dd6151559d, type: 3}
+  itemSlot_Legendary: {fileID: 15436248334062167, guid: e6a33cc08b021444b8e83999a836cb1b, type: 3}
 --- !u!114 &1772444493 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5328965196963493831, guid: 35114b4fdde2b1642b27344b1c8d2efd, type: 3}

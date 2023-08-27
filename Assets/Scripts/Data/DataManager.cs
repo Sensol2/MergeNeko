@@ -44,6 +44,12 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.SetInt(key, count + 1);
     }
 
+    public void MinusItemCount(string key)
+    {
+        int count = PlayerPrefs.GetInt(key);
+        PlayerPrefs.SetInt(key, count - 1);
+    }
+
     public bool HasItem(string key)
     {
         return PlayerPrefs.GetInt(key) > 0; // 기본 값은 false
@@ -54,7 +60,31 @@ public class DataManager : MonoBehaviour
         return PlayerPrefs.GetInt(key);
     }
 
+    // 3. item level 저장
+    private string GetItemLevelKey(string key)
+    {
+        return key + "_Level";
+    }
 
+    public void SetItemLevel(string key, int level)
+    {
+        string levelKey = GetItemLevelKey(key);
+        PlayerPrefs.SetInt(levelKey, level);
+    }
+
+    public int GetItemLevel(string key)
+    {
+        string levelKey = GetItemLevelKey(key);
+        return PlayerPrefs.GetInt(levelKey, 0); // 기본 레벨은 1로 설정
+    }
+
+    public void UpgradeItemLevel(string key)
+    {
+        int currentLevel = GetItemLevel(key);
+        SetItemLevel(key, currentLevel + 1);
+    }
+
+    // 4. 장착 효과 저장
     public void SetEquippedEffect(EffectType effectType)
     {
         PlayerPrefs.SetInt(EQUIPPED_EFFECT_KEY, (int)effectType);

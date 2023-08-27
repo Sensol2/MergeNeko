@@ -43,8 +43,7 @@ public class SlotGenerator : MonoBehaviour
                     default:
                         throw new System.Exception();
                 }
-                slot.transform.Find("icon").GetComponent<Image>().sprite = item.icon;
-                slot.transform.Find("count").GetComponent<TMP_Text>().text = $"x{count}";
+                slot.GetComponent<ItemInfo>().SetItem(item);
             }
             else
             {
