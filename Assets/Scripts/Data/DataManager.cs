@@ -93,7 +93,6 @@ public class DataManager : MonoBehaviour
     public EffectType GetEquippedEffect()
     {
         int equippedItemValue = PlayerPrefs.GetInt(EQUIPPED_EFFECT_KEY, (int)EffectType.None);
-        Debug.Log("return: "+ equippedItemValue);
         return (EffectType)equippedItemValue;
     }
 

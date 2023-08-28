@@ -32,7 +32,7 @@ public class Cat : MonoBehaviour
 		rigid = GetComponent<Rigidbody2D>();
 		isMerging = false;
 		StartCoroutine(ResetComboAfterSec(3.0f));
-		GameOverZone.OnGameOver += DestroySelf;
+		GameOverZone.OnGameOver += DestroyAllCats;
 	}
 
 	private void Update()
@@ -98,7 +98,11 @@ public class Cat : MonoBehaviour
 
 						// 다음 레벨의 고양이 프리팹을 중간 위치에 생성합니다.
 						GameObject spawnedCat = Instantiate(cats[level + 1], endPos, Quaternion.identity);
-						spawnedCat.GetComponent<Rigidbody2D>().gravityScale = CatController.instance.GravityScale;
+						Rigidbody2D rb = spawnedCat.GetComponent<Rigidbody2D>();
+                        rb.gravityScale = CatController.instance.GravityScale;
+
+						// 피버타임 리스트에 등록
+						PhysicsController.instance.AppendCat(rb);
 
 						//스폰된 고양이 콤보 +1
 						spawnedCat.GetComponent<Cat>().comboCounter = this.comboCounter + 1;
@@ -119,15 +123,18 @@ public class Cat : MonoBehaviour
 			}
 		}
 	}
-	private void DestroySelf()
+	private void DestroyAllCats()
 	{
-		DestroyCat(gameObject);
+        DestroyCat(gameObject);
 	}
 
 	public void DestroyCat(GameObject obj)
 	{
-		// 이펙트 생성
-		VFXManager.instance.GenerateEffect(gameObject.transform.position);
+        // 피버타임 List에서 제거
+        PhysicsController.instance.RemoveCat(rigid);
+
+        // 이펙트 생성
+        VFXManager.instance.GenerateEffect(gameObject.transform.position);
 		SoundManager.instance.PlayMergeSound();
 
 		// 최대 레벨 갱신
@@ -141,6 +148,6 @@ public class Cat : MonoBehaviour
 	// Don't forget to unregister the event when the object is destroyed.
 	private void OnDestroy()
 	{
-		GameOverZone.OnGameOver -= DestroySelf;
+		GameOverZone.OnGameOver -= DestroyAllCats;
 	}
 }

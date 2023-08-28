@@ -520,7 +520,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &345492190
 GameObject:
@@ -949,7 +949,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &819178601
 GameObject:
@@ -967,7 +967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &819178602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,7 +1089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5328965197320528971, guid: 35114b4fdde2b1642b27344b1c8d2efd, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5328965197320528971, guid: 35114b4fdde2b1642b27344b1c8d2efd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1312,55 +1312,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 881079101}
-  - component: {fileID: 881079100}
-  - component: {fileID: 881079099}
+  - component: {fileID: 881079103}
+  - component: {fileID: 881079102}
   m_Layer: 0
-  m_Name: ShakeManager
+  m_Name: PhysicsController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!50 &881079099
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881079098}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &881079100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881079098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d06bf5b844da2a442a76a08d854036c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeForce: 10
-  shakeThreshold: 1
-  backgroundImage: {fileID: 1442542523}
-  shakeDuration: 1
-  shakeStrength: 1
-  shakeVibrato: 10
-  shakeRandomness: 90
+  m_IsActive: 1
 --- !u!4 &881079101
 Transform:
   m_ObjectHideFlags: 0
@@ -1374,8 +1334,36 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &881079102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881079098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715e6f2bc1040544aa00b478b02f5c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShakeDetectionThreshold: 3.6
+  MinShakeInterval: 0.2
+--- !u!114 &881079103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881079098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3684a0118003f6e4f97538beed9374b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShakeForceMultiplier: 5
+  rigids: []
 --- !u!1 &1112553201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,6 +2722,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 190949176447924547, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913770324004685968, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913770324004685968, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913770324004685968, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1913770324004685968, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}

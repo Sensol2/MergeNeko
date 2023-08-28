@@ -7,7 +7,7 @@ public class CatController : MonoBehaviour
 {
     static public CatController instance;
 
-    GameObject spawnedCat;
+    GameObject newCat;
     public GameObject[] cats;
     public float dropSpeed;
     public float GravityScale;
@@ -45,44 +45,48 @@ public class CatController : MonoBehaviour
 
         if (maxLevel <= 4)
         {
-            spawnedCat = Instantiate(cats[Random.Range(0, maxLevel)], new Vector3(0, 4, 0), Quaternion.identity);
+            newCat = Instantiate(cats[Random.Range(0, maxLevel)], new Vector3(0, 4, 0), Quaternion.identity);
         }
         else
         {
-            spawnedCat = Instantiate(cats[Random.Range(0, 4)], new Vector3(0, 4, 0), Quaternion.identity);
+            newCat = Instantiate(cats[Random.Range(0, 4)], new Vector3(0, 4, 0), Quaternion.identity);
         }
 
         // 생성될때 사이즈 커지게
-        var originScale = spawnedCat.transform.localScale;
-        spawnedCat.transform.localScale = new Vector3(0, 0, 0);
-        spawnedCat.transform.DOScale(originScale, scaleDelay);
+        var originScale = newCat.transform.localScale;
+        newCat.transform.localScale = new Vector3(0, 0, 0);
+        newCat.transform.DOScale(originScale, scaleDelay);
 
-        spawnedCat.GetComponent<CircleCollider2D>().enabled = false;
-        spawnedCat.GetComponent<Rigidbody2D>().isKinematic = true;
+        newCat.GetComponent<CircleCollider2D>().enabled = false;
+        newCat.GetComponent<Rigidbody2D>().isKinematic = true;
+
+        // 고양이가 생성될 때 호출되는 코드
+        Rigidbody2D catRigidbody = newCat.GetComponent<Rigidbody2D>();
+        PhysicsController.instance.AppendCat(catRigidbody);
     }
 
     void MoveCat() 
     {
-        if (spawnedCat == null) 
+        if (newCat == null) 
             return;
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector3 newPos = new Vector3(mousePos.x, spawnedCat.transform.position.y, 0);
-        spawnedCat.transform.position = newPos;
+        Vector3 newPos = new Vector3(mousePos.x, newCat.transform.position.y, 0);
+        newCat.transform.position = newPos;
     }
     private void DropCat()
     {
-        if (spawnedCat == null)
+        if (newCat == null)
             return;
 
         //마우스버튼을 떼면 gravity scale에 값을 넣어 아래로 떨어지게 한다.
-        spawnedCat.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -dropSpeed, 0);
-        spawnedCat.GetComponent<CircleCollider2D>().enabled = true;
-        spawnedCat.GetComponent<Rigidbody2D>().isKinematic = false;
-        spawnedCat.GetComponent<Cat>().isNewCat = true;
+        newCat.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -dropSpeed, 0);
+        newCat.GetComponent<CircleCollider2D>().enabled = true;
+        newCat.GetComponent<Rigidbody2D>().isKinematic = false;
+        newCat.GetComponent<Cat>().isNewCat = true;
 
-        spawnedCat = null;
+        newCat = null;
 
         // 1초 후에 GenerateCat() 코루틴을 호출합니다.
         StartCoroutine(GenerateCatWithDelay(generateDelay));

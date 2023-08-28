@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4435966750644036182}
   - component: {fileID: 811609596146773108}
   - component: {fileID: -4108110538137726087}
-  - component: {fileID: -6377893260192224013}
   m_Layer: 0
   m_Name: cat_j
   m_TagString: Cat
@@ -154,17 +153,3 @@ MonoBehaviour:
   isNewCat: 0
   isMerging: 0
   id: 0
---- !u!114 &-6377893260192224013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183997224112696827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ad661eeed774d6458124693f70bd6f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeForce: 3
-  shakeThreshold: 0.1

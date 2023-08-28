@@ -20,11 +20,15 @@ public class ShakeDetector : MonoBehaviour
 
     void Update()
     {
-        if (Input.acceleration.sqrMagnitude >= sqrShakeDetectionThreshold
-            && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
+        if (ScoreManager.instance.isFeverTime) //피버타임인 경우에만
         {
-            physicsController.ShakeRigidbodies(Input.acceleration);
-            timeSinceLastShake = Time.unscaledTime;
+            if (Input.acceleration.sqrMagnitude >= sqrShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
+            {
+                physicsController.ShakeRigidbodies(Input.acceleration);
+                timeSinceLastShake = Time.unscaledTime;
+            }
         }
     }
+
+
 }
