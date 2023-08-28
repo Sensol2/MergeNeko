@@ -96,4 +96,15 @@ public class DataManager : MonoBehaviour
         return (EffectType)equippedItemValue;
     }
 
+
+
+    public void GetAllItemsCheat()
+    {
+        PlayerPrefs.SetInt("GAMEITEM_YARN", 1);
+        PlayerPrefs.SetInt("GAMEITEM_TUNABITZ", 1);
+        PlayerPrefs.SetInt("GAMEITEM_TOYRAT", 1);
+        PlayerPrefs.SetInt("GAMEITEM_CATTOWER", 1);
+        PlayerPrefs.SetInt("GAMEITEM_CATBOX", 1);
+        PlayerPrefs.SetInt("GAMEITEM_BOMB", 1);
+    }
 }

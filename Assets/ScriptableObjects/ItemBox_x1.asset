@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 2b899bcaf334a41419369b29ab9d87f7, type: 3}
   itemName: ItemBox
-  itemDescription: ItemBox INFO
+  itemDescription: It's a mistery box where you can get useful game items.
   itemPrice: 300

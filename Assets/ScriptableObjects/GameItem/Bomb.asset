@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d7d8618df9d6a49babeaf583856885, type: 3}
   m_Name: Bomb
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 2e8720b3d466e774d91313bc21ac3b6a, type: 3}
-  itemName: "\uD3ED\uD0C4"
-  itemDescription: "\uD3ED\uBC1C\uC744 \uC870\uC2EC\uD558\uC138\uC694! <color=#92d4f4><b>+{0}%</b></color>
-    \uD655\uB960\uB85C \uB4F1\uC7A5\uD558\uC5EC, \uB2FF\uC73C\uBA74 \uD130\uC9C0\uBA70
-    \uACE0\uC591\uC774\uB4E4\uC744 \uBC00\uC5B4\uB0C5\uB2C8\uB2E4."
+  icon: {fileID: 21300000, guid: 677070579fa533d40bdf8a8f2895acf7, type: 3}
+  itemName: Bomb
+  itemDescription: Be careful of explosions! With a <color=#92d4f4><b>+{0}%</b></color>
+    chance of appearing, it explodes on contact, pushing the cats away.
   itemPrice: 150
   KEY: GAMEITEM_BOMB
   itemRank: 1

@@ -5,14 +5,20 @@ using UnityEngine;
 
 public class EditorMenu
 {
-    [MenuItem("Custom/Reset PlayerPrefs")]
+    [MenuItem("Cheat/Reset PlayerPrefs")]
     public static void resetPlayerPrefs() 
     {
         PlayerPrefs.DeleteAll();
     }
-    [MenuItem("Custom/motherroad")]
+    [MenuItem("Cheat/motherroad")]
     public static void motherroad()
     {
-        DataManager.instance.SetGem(100000);
+        DataManager.instance.SetGem(4609);
+    }
+
+    [MenuItem("Cheat/GetAllItems")]
+    public static void GetAllItems()
+    {
+        DataManager.instance.GetAllItemsCheat();
     }
 }

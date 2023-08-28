@@ -51,9 +51,9 @@ public class GameItem : ShopItemData
             float value = effectValues[level];
             float nextValue = effectValues[level+1];
             if (value % 1 == 0) // 정수인 경우
-                return string.Format("다음 아이템 효과: {0} > {1}", value.ToString("0"), nextValue.ToString("0"));
+                return string.Format("Next item value : {0} > {1}", value.ToString("0"), nextValue.ToString("0"));
             else // 소수점인 경우
-                return string.Format("다음 아이템 효과: {0} > {1}", value.ToString("0.0"), nextValue.ToString("0.0"));
+                return string.Format("Next item value : {0} > {1}", value.ToString("0.0"), nextValue.ToString("0.0"));
         }
         else
             return "MAX LEVEL";

@@ -30,7 +30,8 @@ public class Cat : MonoBehaviour
 	private void Start()
 	{
 		rigid = GetComponent<Rigidbody2D>();
-		isMerging = false;
+		isNewCat = true;
+        isMerging = false;
 		StartCoroutine(ResetComboAfterSec(3.0f));
 		GameOverZone.OnGameOver += DestroyAllCats;
 	}
@@ -60,7 +61,7 @@ public class Cat : MonoBehaviour
 		if (isNewCat && !ScoreManager.instance.isFeverTime)
 		{
 			isNewCat = false;
-			SoundManager.instance.PlayPitSound();
+			SoundManager.instance.PlaySound(SoundType.PIT);
 			rigid.gravityScale = CatController.instance.GravityScale;
 		}
 			
@@ -96,33 +97,38 @@ public class Cat : MonoBehaviour
 						DestroyCat(gameObject);
 						DestroyCat(otherCat.gameObject);
 
-						// 다음 레벨의 고양이 프리팹을 중간 위치에 생성합니다.
-						GameObject spawnedCat = Instantiate(cats[level + 1], endPos, Quaternion.identity);
-						Rigidbody2D rb = spawnedCat.GetComponent<Rigidbody2D>();
-                        rb.gravityScale = CatController.instance.GravityScale;
-
-						// 피버타임 리스트에 등록
-						PhysicsController.instance.AppendCat(rb);
-
-						//스폰된 고양이 콤보 +1
-						spawnedCat.GetComponent<Cat>().comboCounter = this.comboCounter + 1;
-						ComboManager.instance.MakeCombo(this.comboCounter + 1, spawnedCat.transform.position);
-
-						// 생성될때 사이즈 커지게
-						var originScale = spawnedCat.transform.localScale;
-						spawnedCat.transform.localScale = new Vector3(0, 0, 0);
-						spawnedCat.transform.DOScale(originScale + new Vector3(0.01f, 0.01f, 0.01f), 0.1f).OnComplete(() => {
-							spawnedCat.transform.DOScale(originScale, 0.1f);
-						});
-
-						// 합친 고양이 개수 +1 (전역)
-						mergedCats += 1;
-
-					});
+						SpawnCat(endPos);
+                    });
 				}
 			}
 		}
 	}
+
+	public void SpawnCat(Vector3 pos)
+	{
+        // 다음 레벨의 고양이 프리팹을 중간 위치에 생성합니다.
+        GameObject spawnedCat = Instantiate(cats[level + 1], pos, Quaternion.identity);
+        Rigidbody2D rb = spawnedCat.GetComponent<Rigidbody2D>();
+        rb.gravityScale = CatController.instance.GravityScale;
+
+        // 피버타임 리스트에 등록
+        PhysicsController.instance.AppendCat(rb);
+
+        //스폰된 고양이 콤보 +1
+        spawnedCat.GetComponent<Cat>().comboCounter = this.comboCounter + 1;
+        ComboManager.instance.MakeCombo(this.comboCounter + 1, spawnedCat.transform.position);
+
+        // 생성될때 사이즈 커지게
+        var originScale = spawnedCat.transform.localScale;
+        spawnedCat.transform.localScale = new Vector3(0, 0, 0);
+        spawnedCat.transform.DOScale(originScale + new Vector3(0.01f, 0.01f, 0.01f), 0.1f).OnComplete(() => {
+            spawnedCat.transform.DOScale(originScale, 0.1f);
+        });
+
+        // 합친 고양이 개수 +1 (전역)
+        mergedCats += 1;
+    }
+
 	private void DestroyAllCats()
 	{
         DestroyCat(gameObject);
@@ -135,10 +141,10 @@ public class Cat : MonoBehaviour
 
         // 이펙트 생성
         VFXManager.instance.GenerateEffect(gameObject.transform.position);
-		SoundManager.instance.PlayMergeSound();
+		SoundManager.instance.PlaySound(SoundType.NYA);
 
-		// 최대 레벨 갱신
-		LevelManager.instance.UpdateLevel(level + 1);
+        // 최대 레벨 갱신
+        LevelManager.instance.UpdateLevel(level + 1);
 
 		// 점수 올리기
 		ScoreManager.instance.AddScoreByLevel(level + 1);

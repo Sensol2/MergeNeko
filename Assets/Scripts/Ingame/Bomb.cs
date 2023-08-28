@@ -22,6 +22,7 @@ public class Bomb : MonoBehaviour
 
     private IEnumerator ExplodeAfterDelay()
     {
+        SoundManager.instance.PlaySound(SoundType.BOMB);
         yield return new WaitForSeconds(3.0f);
 
         // Æø¹ß ÀÌÆåÆ® »ý¼º

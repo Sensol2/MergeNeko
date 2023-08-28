@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0d7d8618df9d6a49babeaf583856885, type: 3}
-  m_Name: CatTower
+  m_Name: TunaBitz
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: d2be97c8b9f5ba645a1bcb819ee86159, type: 3}
-  itemName: Cat Tower
-  itemDescription: Like a cat that loves high places, the game-over limit line height
-    increases by <color=#92d4f4><b>+{0}</b></color>.
-  itemPrice: 100
-  KEY: GAMEITEM_CATTOWER
-  itemRank: 0
+  icon: {fileID: 21300000, guid: d746403fba7ffd14d8cc3d5f7db4f94d, type: 3}
+  itemName: TunaBitz
+  itemDescription: It's a nutritious canned food. With a <color=#92d4f4><b>+{0}%</b></color>
+    chance of appearing, it can merge with any cat upon contact.
+  itemPrice: 150
+  KEY: GAMEITEM_TUNABITZ
+  itemRank: 1
   level: 0
   maxLevel: 5
   upgradeCost: 640000002c010000f4010000bc02000000000000
   effectValues:
-  - 0.1
-  - 0.2
-  - 0.3
-  - 0.4
-  - 0.5
+  - 2
+  - 3
+  - 5
+  - 7
+  - 10

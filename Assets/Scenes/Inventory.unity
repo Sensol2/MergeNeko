@@ -689,6 +689,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3596de46a5b00a54699f1fbace96ec40, type: 2}
   - {fileID: 11400000, guid: a89c27ddeddf6f3408cfcde309697bbc, type: 2}
   - {fileID: 11400000, guid: 5f03f4ed5959c6b429b5b0a336951e55, type: 2}
+  - {fileID: 11400000, guid: 7b58bdd6992447c42870fba28335bb3e, type: 2}
+  - {fileID: 11400000, guid: b2020115323865e49bffdc254221a66b, type: 2}
+  - {fileID: 11400000, guid: b2020115323865e49bffdc254221a66b, type: 2}
+  - {fileID: 11400000, guid: b2020115323865e49bffdc254221a66b, type: 2}
+  - {fileID: 11400000, guid: b2020115323865e49bffdc254221a66b, type: 2}
+  - {fileID: 11400000, guid: b2020115323865e49bffdc254221a66b, type: 2}
+  - {fileID: 11400000, guid: b2020115323865e49bffdc254221a66b, type: 2}
   itemSlot_Unknown: {fileID: 5310550589016107767, guid: 2aecd202f2899ce448e42d409dc14bc8, type: 3}
   itemSlot_Normal: {fileID: 15436248334062167, guid: bebd2be1976d223459c8e24d50f31fb3, type: 3}
   itemSlot_Epic: {fileID: 15436248334062167, guid: b8d741f877d99f9409bc93dd6151559d, type: 3}

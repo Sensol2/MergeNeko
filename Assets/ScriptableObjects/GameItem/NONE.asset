@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0d7d8618df9d6a49babeaf583856885, type: 3}
-  m_Name: CatTower
+  m_Name: NONE
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: d2be97c8b9f5ba645a1bcb819ee86159, type: 3}
-  itemName: Cat Tower
-  itemDescription: Like a cat that loves high places, the game-over limit line height
-    increases by <color=#92d4f4><b>+{0}</b></color>.
+  icon: {fileID: 21300000, guid: 2e8720b3d466e774d91313bc21ac3b6a, type: 3}
+  itemName: NONE
+  itemDescription: TEMP ITEM INFO
   itemPrice: 100
-  KEY: GAMEITEM_CATTOWER
+  KEY: GAMEITEM_NONE
   itemRank: 0
   level: 0
   maxLevel: 5
   upgradeCost: 640000002c010000f4010000bc02000000000000
   effectValues:
-  - 0.1
-  - 0.2
-  - 0.3
-  - 0.4
-  - 0.5
+  - 1
+  - 3
+  - 4
+  - 6
+  - 7

@@ -45,7 +45,7 @@ public class ScoreBoard : MonoBehaviour
         CalculateGem();
 
         //기타 정보
-        timeText.text = "TIME: " + TimeManager.instance.GetTimerText();
+        timeText.text = "TIME: " + GameManager.instance.GetTimerText();
         maxComboText.text = "COMBO: " + ComboManager.instance.maxCombo.ToString();
         mergedCatText.text = "MERGED CATS: " + Cat.mergedCats.ToString();
 
@@ -85,6 +85,6 @@ public class ScoreBoard : MonoBehaviour
             info_toyrat.transform.Find("Description").GetComponent<TMP_Text>().text = $"Bonus Gem: +{bonusGem}";
         }
         DataManager.instance.SetGem(gem + bonusGem);
-        gainedGemText.text = gem.ToString();
+        gainedGemText.text = bonusGem.ToString();
     }
 }
