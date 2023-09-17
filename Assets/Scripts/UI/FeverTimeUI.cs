@@ -14,7 +14,6 @@ public class FeverTimeUI : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
-        ScoreManager.onFeverTimeStart += FeverAnimation;
     }
 
     public void FeverAnimation()

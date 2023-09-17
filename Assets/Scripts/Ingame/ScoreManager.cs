@@ -7,7 +7,6 @@ public class ScoreManager : MonoBehaviour
 {
     static public ScoreManager instance;
     public TextMeshProUGUI scoreText;
-    public FeverTimeUI feverTimeUI;
 
     public int[] scoreTable = { 5, 10, 30, 50, 100, 150, 300, 500, 1000, 3000 };
     public int feverNeed;
@@ -18,9 +17,9 @@ public class ScoreManager : MonoBehaviour
 
     // 피버타임 이벤트
     public GameItem item_box;
-    public delegate void FeverTimeEvent();
-    public static event FeverTimeEvent onFeverTimeStart;
-    public static event FeverTimeEvent onFeverTimeEnd;
+
+    public FeverTimeUI feverTimeUI;
+    public PhysicsController physicsController;
 
     private void Awake()
     {
@@ -81,7 +80,9 @@ public class ScoreManager : MonoBehaviour
     public void EnableFeverTime()
     {
         isFeverTime = true;
-        onFeverTimeStart?.Invoke();
+
+        feverTimeUI.FeverAnimation();
+        physicsController.EnterFeverTime();
 
         StartCoroutine(FeverTimer(feverTimeDuration));
     }
@@ -90,7 +91,8 @@ public class ScoreManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         isFeverTime = false;
-        onFeverTimeEnd?.Invoke();
+
+        physicsController.ExitFeverTime();
     }
 
     void DisableFeverTime()
@@ -98,11 +100,4 @@ public class ScoreManager : MonoBehaviour
         GameOverZone.OnGameOver -= DisableFeverTime;
         this.gameObject.SetActive(false);
     }
-
-    public void ResetFeverEvent()
-    {
-        onFeverTimeStart = null;
-        onFeverTimeEnd = null;
-    }
-
 }

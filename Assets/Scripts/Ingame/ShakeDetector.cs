@@ -18,7 +18,7 @@ public class ShakeDetector : MonoBehaviour
         physicsController = GetComponent<PhysicsController>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (ScoreManager.instance.isFeverTime) //피버타임인 경우에만
         {

@@ -50,7 +50,6 @@ public class CatController : MonoBehaviour
     {
         if (GameManager.instance.isOnSetting)
             return;
-        
 
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
         {
@@ -146,9 +145,10 @@ public class CatController : MonoBehaviour
             return;
 
         //마우스버튼을 떼면 gravity scale에 값을 넣어 아래로 떨어지게 한다.
-        newObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -dropSpeed, 0);
         newObject.GetComponent<CircleCollider2D>().enabled = true;
         newObject.GetComponent<Rigidbody2D>().isKinematic = false;
+        newObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -dropSpeed, 0);
+
 
         //newObject.GetComponent<Cat>().isNewCat = true;
 

@@ -17,7 +17,7 @@ public class ProgressBar : MonoBehaviour
         UpdateTimerText(); // 타이머 텍스트 업데이트
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (timeLeft > 0)
         {

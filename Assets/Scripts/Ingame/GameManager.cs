@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+
+        // 프레임 30프레임 고정
+        Application.targetFrameRate = 60;
     }
 
     void Update()

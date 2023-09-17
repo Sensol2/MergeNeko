@@ -21,7 +21,7 @@ MonoBehaviour:
   itemRank: 0
   level: 0
   maxLevel: 5
-  upgradeCost: 640000002c010000f4010000bc02000000000000
+  upgradeCost: 2300000032000000640000009600000000000000
   effectValues:
   - 0.1
   - 0.2

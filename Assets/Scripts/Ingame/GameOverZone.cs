@@ -10,7 +10,7 @@ public class GameOverZone : MonoBehaviour
     public delegate void GameOverEventHandler();
     public static event GameOverEventHandler OnGameOver;
 
-	void Update()
+	void FixedUpdate()
     {
         if (catInZone)
         {
@@ -38,7 +38,7 @@ public class GameOverZone : MonoBehaviour
         OnGameOver?.Invoke();
 
         ResetGameOverEvent();
-        ScoreManager.instance.ResetFeverEvent();
+        //ScoreManager.instance.ResetFeverEvent();
     }
 
     public void ResetGameOverEvent()

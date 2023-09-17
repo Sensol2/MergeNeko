@@ -13,12 +13,6 @@ public class PhysicsController : MonoBehaviour
             instance = this;
     }
 
-    private void Start()
-    {
-        // 이벤트 리스너 등록
-        ScoreManager.onFeverTimeStart += EnterFeverTime;
-        ScoreManager.onFeverTimeEnd += ExitFeverTime;
-    }
 
     public void AppendCat(Rigidbody2D rigid)
     {
@@ -40,7 +34,7 @@ public class PhysicsController : MonoBehaviour
         }
     }
 
-    void EnterFeverTime()
+    public void EnterFeverTime()
     {
         Debug.Log("피버타입 돌입!" + rigids.Count);
         foreach (var rigidbody in rigids)
@@ -53,7 +47,7 @@ public class PhysicsController : MonoBehaviour
     }
 
     // 피버타임 종료 시 중력 복구
-    void ExitFeverTime()
+    public void ExitFeverTime()
     {
         foreach (var rigidbody in rigids)
         {
@@ -63,10 +57,4 @@ public class PhysicsController : MonoBehaviour
         }
     }
 
-    void OnDestroy()
-    {
-        // 이벤트 리스너 해제
-        ScoreManager.onFeverTimeStart -= EnterFeverTime;
-        ScoreManager.onFeverTimeEnd -= ExitFeverTime;
-    }
 }

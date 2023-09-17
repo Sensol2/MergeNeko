@@ -36,7 +36,7 @@ public class Cat : MonoBehaviour
 		GameOverZone.OnGameOver += DestroyAllCats;
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		if (transform.position.y < -20.0f)
 			Destroy(gameObject);

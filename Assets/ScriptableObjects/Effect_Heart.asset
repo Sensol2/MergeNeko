@@ -15,6 +15,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: d563537dea3766f45a640d7ee2fe61c2, type: 3}
   itemName: Lovely Heart
   itemDescription: Lovely Heart Effect
-  itemPrice: 1000
+  itemPrice: 500
   KEY: EFFECT_HEART
   effectType: 1

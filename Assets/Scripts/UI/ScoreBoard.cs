@@ -74,17 +74,17 @@ public class ScoreBoard : MonoBehaviour
     {
         GameItem item = item_toyrat;
         float score = ScoreManager.instance.GetScore();
-        int gem = (int)(score * 0.01);
+        int gem = (int)(score * 0.03);
         int bonusGem = 0;
         if (DataManager.instance.HasItem(item.KEY))
         {
             int level = DataManager.instance.GetItemLevel(item.KEY);
-            bonusGem = (int)(gem * item.effectValues[item.level]);
+            bonusGem = (int)(gem * item.effectValues[item.level]/100);
 
             info_toyrat.SetActive(true);
             info_toyrat.transform.Find("Description").GetComponent<TMP_Text>().text = $"Bonus Gem: +{bonusGem}";
         }
         DataManager.instance.SetGem(gem + bonusGem);
-        gainedGemText.text = bonusGem.ToString();
+        gainedGemText.text = (gem + bonusGem).ToString();
     }
 }

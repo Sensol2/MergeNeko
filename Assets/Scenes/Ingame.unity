@@ -1432,12 +1432,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1697238502}
-  feverTimeUI: {fileID: 819178602}
   scoreTable: 050000000a0000001e0000003200000064000000960000002c010000f4010000e8030000
   feverNeed: 1000
   isFeverTime: 0
   feverTimeDuration: 5
   item_box: {fileID: 11400000, guid: 3596de46a5b00a54699f1fbace96ec40, type: 2}
+  feverTimeUI: {fileID: 819178602}
+  physicsController: {fileID: 881079103}
 --- !u!4 &1112553203
 Transform:
   m_ObjectHideFlags: 0
