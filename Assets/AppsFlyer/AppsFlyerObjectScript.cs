@@ -18,10 +18,6 @@ public class AppsFlyerObjectScript : MonoBehaviour , IAppsFlyerConversionData
     public bool getConversionData;
     //******************************//
 
-    void Awake(){ 
-        DontDestroyOnLoad(gameObject);
-    }
-    
     void Start()
     {
         // These fields are set from the editor so do not modify!
