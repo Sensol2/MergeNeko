@@ -21,7 +21,7 @@ public class GameOverZone : MonoBehaviour
 
             if (timeInZone >= 3f)
             {
-                // °ÔÀÓ¿À¹ö
+                // ê²Œìž„ì˜¤ë²„
                 Debug.Log("Game Over");
                 TriggerGameOver();
             }
@@ -36,7 +36,6 @@ public class GameOverZone : MonoBehaviour
     public void TriggerGameOver()
     {
         OnGameOver?.Invoke();
-
         ResetGameOverEvent();
         //ScoreManager.instance.ResetFeverEvent();
     }
@@ -67,7 +66,7 @@ public class GameOverZone : MonoBehaviour
             if (catCount <= 0)
             {
                 catInZone = false;
-                catCount = 0; // ÀÌ ÄÚµå´Â catCount°¡ À½¼ö°¡ µÇ´Â °ÍÀ» ¹æÁöÇÕ´Ï´Ù.
+                catCount = 0; // ì´ ì½”ë“œëŠ” catCountê°€ ìŒìˆ˜ê°€ ë˜ëŠ” ê²ƒì„ ë°©ì§€í•©ë‹ˆë‹¤.
             }
         }
     }

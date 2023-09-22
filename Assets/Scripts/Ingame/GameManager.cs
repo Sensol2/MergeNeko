@@ -15,20 +15,20 @@ public class GameManager : MonoBehaviour
         if (instance == null)
             instance = this;
 
-        // ÇÁ·¹ÀÓ 30ÇÁ·¹ÀÓ °íÁ¤
+        // í”„ë ˆì„ 30í”„ë ˆì„ ê³ ì •
         Application.targetFrameRate = 60;
     }
 
     void Update()
     {
-        spentTime += Time.deltaTime; // ½Ã°£ Áõ°¡
+        spentTime += Time.deltaTime; // ì‹œê°„ ì¦ê°€
     }
 
     public string GetTimerText()
     {
-        int minutes = (int)(spentTime / 60); // ºĞ °è»ê
-        int seconds = (int)(spentTime % 60); // ÃÊ °è»ê
-        return string.Format("{0:00}:{1:00}", minutes, seconds); // ÅØ½ºÆ® Çü½Ä ÁöÁ¤
+        int minutes = (int)(spentTime / 60); // ë¶„ ê³„ì‚°
+        int seconds = (int)(spentTime % 60); // ì´ˆ ê³„ì‚°
+        return string.Format("{0:00}:{1:00}", minutes, seconds); // í…ìŠ¤íŠ¸ í˜•ì‹ ì§€ì •
     }
 
     public void OpenSettingPanel()

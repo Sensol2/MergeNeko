@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -136,7 +137,7 @@ public class Cat : MonoBehaviour
 
 	public void DestroyCat(GameObject obj)
 	{
-        // 피버타임 List에서 제거
+		// 피버타임 List에서 제거
         PhysicsController.instance.RemoveCat(rigid);
 
         // 이펙트 생성
