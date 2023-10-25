@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d3f1dc1db90ac42ac1a28ab939a4cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameover: 0
 --- !u!61 &184358784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2722,7 +2723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 35}
+  m_AnchoredPosition: {x: 0, y: 34.999985}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2032119575
@@ -3842,6 +3843,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3477422279576009677, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4349626717563810179, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3874,6 +3879,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5083168369860203444, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5331694672928076761, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3888,6 +3897,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5331694672928076761, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351831238575140785, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5633192136945549017, guid: 49c5bde071290284d850eb461ae76b5a, type: 3}

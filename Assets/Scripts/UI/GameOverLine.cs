@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GameOverLine : MonoBehaviour
 {
     public GameItem item_catTower;
-    public float fadeDuration = 1f; // ÆäÀÌµå ÀÎ/¾Æ¿ô¿¡ °É¸®´Â ½Ã°£
+    public float fadeDuration = 1f; // í˜ì´ë“œ ì¸/ì•„ì›ƒì— ê±¸ë¦¬ëŠ” ì‹œê°„
     private SpriteRenderer spriteRenderer;
 
     private void Awake()
@@ -21,7 +21,7 @@ public class GameOverLine : MonoBehaviour
 
     private void IncreaseGameoverY()
     {
-        if (DataManager.instance.HasItem(item_catTower.KEY)) //Ä¹Å¸¿ö ¾ÆÀÌÅÛ È¿°ú·Î °ÔÀÓ¿À¹ö »óÇÑ¼± ´Ã¸®±â
+        if (DataManager.instance.HasItem(item_catTower.KEY)) //ìº£íƒ€ì›Œ ì•„ì´í…œ íš¨ê³¼ë¡œ ê²Œì„ì˜¤ë²„ ìƒí•œì„  ëŠ˜ë¦¬ê¸°
         {
             int level = DataManager.instance.GetItemLevel(item_catTower.KEY);
             float distance = item_catTower.effectValues[level];
@@ -31,10 +31,10 @@ public class GameOverLine : MonoBehaviour
 
     private void FadeInOut()
     {
-        // ÆäÀÌµå ¾Æ¿ô
+        // í˜ì´ë“œ ì•„ì›ƒ
         spriteRenderer.DOFade(0, fadeDuration).OnComplete(() =>
         {
-            // ÆäÀÌµå ÀÎ
+            // í˜ì´ë“œ ì¸
             spriteRenderer.DOFade(1, fadeDuration).OnComplete(FadeInOut);
         });
     }
