@@ -23,6 +23,10 @@ MonoBehaviour:
     m_Key: effect
     m_Metadata:
       m_Items: []
+  - m_Id: 11848360435712
+    m_Key: cat_tower_desc
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

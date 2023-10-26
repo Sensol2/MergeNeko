@@ -26,6 +26,11 @@ MonoBehaviour:
     m_Localized: Sound
     m_Metadata:
       m_Items: []
+  - m_Id: 11848360435712
+    m_Localized: Like a cat that loves high places, the game-over limit line height
+      increases by <color=#92d4f4><b>+{0}</b></color>.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -25,6 +25,10 @@ MonoBehaviour:
     m_Address: Assets/Languages/Ingame/Ingame-settings Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 5d266cea5ef2242439f2cdd0306ae815
+    m_Address: Assets/Languages/Inventory/Inventory Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 646f4573446f64448aacc6ebffc805c0, type: 2}
   m_SchemaSet:

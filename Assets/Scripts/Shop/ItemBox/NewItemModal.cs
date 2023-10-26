@@ -27,7 +27,7 @@ public class NewItemModal : MonoBehaviour
         itemIcon.sprite = item.icon;
 
         int currentLevel = DataManager.instance.GetItemLevel(item.KEY);
-        item_name.text = item.itemName;
+        item_name.text = item.itemName.GetLocalizedString();
         item_description.text = item.GetItemDescription(currentLevel);
     }
 
@@ -52,12 +52,12 @@ public class NewItemModal : MonoBehaviour
 
         if (gem < item.upgradeCost[currentLevel])
         {
-            Debug.Log("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+            Debug.Log("ëˆì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
             return;
         }
         else if (currentLevel + 1 >= item.maxLevel)
         {
-            Debug.Log("ÃÖ´ë ·¹º§ÀÔ´Ï´Ù.");
+            Debug.Log("ìµœëŒ€ ë ˆë²¨ì…ë‹ˆë‹¤.");
             return;
         }
         else
@@ -66,7 +66,7 @@ public class NewItemModal : MonoBehaviour
             DataManager.instance.UpgradeItemLevel(item.KEY);
             GameObject.Find("GemTextArea").GetComponent<DisplayGem>().UpdateGemText();
             closeModal.DestroyModalUI();
-            Debug.Log("±¸¸Å¿Ï·á");
+            Debug.Log("êµ¬ë§¤ì™„ë£Œ");
         }
     }
 
@@ -81,7 +81,7 @@ public class NewItemModal : MonoBehaviour
             itemInfo.UpdateSlotUI();
             GameObject.Find("GemTextArea").GetComponent<DisplayGem>().UpdateGemText();
             closeModal.DestroyModalUI();
-            Debug.Log("ÆÇ¸Å¿Ï·á");
+            Debug.Log("íŒë§¤ì™„ë£Œ");
         }
     }
 

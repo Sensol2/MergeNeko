@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,17 +29,18 @@ public class GameItem : ShopItemData
     public int level;
     public int maxLevel;
     public int[] upgradeCost;
-    public float[] effectValues; // ·¹º§ º° È¿°ú °ª
+    public float[] effectValues; // ë ˆë²¨ ë³„ íš¨ê³¼ ê°’
 
     public string GetItemDescription(int level)
     {
         if (level >= 0 && level < effectValues.Length)
         {
             float value = effectValues[level];
-            if (value % 1 == 0) // Á¤¼öÀÎ °æ¿ì
-                return string.Format(itemDescription, value.ToString("0"));
-            else // ¼Ò¼öÁ¡ÀÎ °æ¿ì
-                return string.Format(itemDescription, value.ToString("0.0"));
+            if (value % 1 == 0) // ì •ìˆ˜ì¸ ê²½ìš°
+                return string.Format(itemDescription.GetLocalizedString(), value.ToString("0"));
+            else // ì†Œìˆ˜ì ì¸ ê²½ìš°
+                return string.Format(itemDescription.GetLocalizedString(), value.ToString("0.0"));
+
         }
         else
             return "Invalid level.";
@@ -50,9 +52,9 @@ public class GameItem : ShopItemData
         {
             float value = effectValues[level];
             float nextValue = effectValues[level+1];
-            if (value % 1 == 0) // Á¤¼öÀÎ °æ¿ì
+            if (value % 1 == 0) // ì •ìˆ˜ì¸ ê²½ìš°
                 return string.Format("Next item value : {0} > {1}", value.ToString("0"), nextValue.ToString("0"));
-            else // ¼Ò¼öÁ¡ÀÎ °æ¿ì
+            else // ì†Œìˆ˜ì ì¸ ê²½ìš°
                 return string.Format("Next item value : {0} > {1}", value.ToString("0.0"), nextValue.ToString("0.0"));
         }
         else

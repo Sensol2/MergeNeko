@@ -6,9 +6,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-//°¡Àå ±âº»ÀûÀÎ »óÁ¡ UI
-//°æ¿ì¿¡ µû¶ó ´Ù¸¥ UI¸¦ ¶ç¿ö¾ß µÉ ¶§¿¡´Â
-//ÀÌ Å¬·¡½º¸¦ »ó¼Ó¹Ş¾Æ¼­ ¿À¹ö¶óÀÌµåµÈ UI¸¦ ¶ç¿öÁÜ
+//ê°€ì¥ ê¸°ë³¸ì ì¸ ìƒì  UI
+//ê²½ìš°ì— ë”°ë¼ ë‹¤ë¥¸ UIë¥¼ ë„ì›Œì•¼ ë  ë•Œì—ëŠ”
+//ì´ í´ë˜ìŠ¤ë¥¼ ìƒì†ë°›ì•„ì„œ ì˜¤ë²„ë¼ì´ë“œëœ UIë¥¼ ë„ì›Œì¤Œ
 public class BasicShopUI : MonoBehaviour
 {
     public DisplayGem shopUIController;
@@ -37,9 +37,9 @@ public class BasicShopUI : MonoBehaviour
 
     public virtual void UpdateUI()
     { 
-        //»óÁ¡ ÆĞ³ÎÀ» ¿­¾úÀ» ¶§ Ãß°¡·Î ÃëÇØÁÖ¾î¾ß ÇÏ´Â µ¿ÀÛÀ» Á¤ÀÇ
-        //ex) ÀÌ¹Ì ±¸¸ÅÇÑ Ç×¸ñÀÇ °æ¿ì: ±¸¸Å¹öÆ° »èÁ¦ÇÏ±â
-        //±âº»ÀûÀ¸·Î´Â ºñ¾îÀÖÀ¸³ª, ÇÊ¿äÇÑ °æ¿ì Ãß°¡ µ¿ÀÛÀ» ¿À¹ö¶óÀÌµåÇØ »ç¿ëÇÏ±â
+        //ìƒì  íŒ¨ë„ì„ ì—´ì—ˆì„ ë•Œ ì¶”ê°€ë¡œ ì·¨í•´ì£¼ì–´ì•¼ í•˜ëŠ” ë™ì‘ì„ ì •ì˜
+        //ex) ì´ë¯¸ êµ¬ë§¤í•œ í•­ëª©ì˜ ê²½ìš°: êµ¬ë§¤ë²„íŠ¼ ì‚­ì œí•˜ê¸°
+        //ê¸°ë³¸ì ìœ¼ë¡œëŠ” ë¹„ì–´ìˆìœ¼ë‚˜, í•„ìš”í•œ ê²½ìš° ì¶”ê°€ ë™ì‘ì„ ì˜¤ë²„ë¼ì´ë“œí•´ ì‚¬ìš©í•˜ê¸°
     }
 
     public void OpenShoppanel()
@@ -47,8 +47,8 @@ public class BasicShopUI : MonoBehaviour
         itemIcon.sprite = item.icon;
         itemIcon.rectTransform.sizeDelta = new Vector2(item.icon.rect.width, item.icon.rect.height);
 
-        itemNameText.text = item.itemName;
-        itemDescriptionText.text = item.itemDescription;
+        itemNameText.text = item.itemName.GetLocalizedString();
+        itemDescriptionText.text = null;
         priceText.text = item.itemPrice.ToString();
 
         UpdateUI();
@@ -68,14 +68,14 @@ public class BasicShopUI : MonoBehaviour
         int gem = DataManager.instance.GetGem();
         if (gem < item.itemPrice)
         {
-            Debug.Log("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+            Debug.Log("ëˆì´ ë¶€ì¡±í•©ë‹ˆë‹¤.");
             return;
         }
         else
         {
             DataManager.instance.SetGem(gem - item.itemPrice);
             shopUIController.UpdateGemText();
-            Debug.Log("±¸¸Å¿Ï·á");
+            Debug.Log("êµ¬ë§¤ì™„ë£Œ");
         }
     }
 }
