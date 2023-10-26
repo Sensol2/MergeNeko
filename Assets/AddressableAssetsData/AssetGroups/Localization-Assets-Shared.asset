@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: Assets/Languages/Inventory/Inventory Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 68cd2b3d53db53c468928dcf54144bc4
+    m_Address: Assets/Languages/script/ScriptsTable Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 646f4573446f64448aacc6ebffc805c0, type: 2}
   m_SchemaSet:

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Localization;
+
 public enum ItemEffectType
 {
     IncreaseScore,
@@ -30,6 +32,7 @@ public class GameItem : ShopItemData
     public int maxLevel;
     public int[] upgradeCost;
     public float[] effectValues; // 레벨 별 효과 값
+    public LocalizedString estimated_value = new LocalizedString { TableReference = "ScriptsTable", TableEntryReference = "estimated_value" };
 
     public string GetItemDescription(int level)
     {
@@ -53,9 +56,9 @@ public class GameItem : ShopItemData
             float value = effectValues[level];
             float nextValue = effectValues[level+1];
             if (value % 1 == 0) // 정수인 경우
-                return string.Format("Next item value : {0} > {1}", value.ToString("0"), nextValue.ToString("0"));
+                return string.Format(estimated_value.GetLocalizedString()+ " : {0} > {1}", value.ToString("0"), nextValue.ToString("0"));
             else // 소수점인 경우
-                return string.Format("Next item value : {0} > {1}", value.ToString("0.0"), nextValue.ToString("0.0"));
+                return string.Format(estimated_value.GetLocalizedString()+ " : {0} > {1}", value.ToString("0.0"), nextValue.ToString("0.0"));
         }
         else
             return "MAX LEVEL";

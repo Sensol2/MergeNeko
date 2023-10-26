@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
 
 public class NewItemModal : MonoBehaviour
 {
@@ -12,11 +14,12 @@ public class NewItemModal : MonoBehaviour
     public Image itemIcon;
     public TMP_Text item_name;
     public TMP_Text item_description;
+    public LocalizedString upgrade = new LocalizedString { TableReference = "ScriptsTable", TableEntryReference = "upgrade" };
+    public LocalizedString sell = new LocalizedString { TableReference = "ScriptsTable", TableEntryReference = "sell" };
 
     public TMP_Text upgradeBtn_title;
     public TMP_Text upgradeBtn_description;
     public TMP_Text sellBtn_title;
-
 
     public CloseModal closeModal;
 
@@ -28,6 +31,7 @@ public class NewItemModal : MonoBehaviour
 
         int currentLevel = DataManager.instance.GetItemLevel(item.KEY);
         item_name.text = item.itemName.GetLocalizedString();
+        Debug.Log(item.itemName.GetLocalizedString());
         item_description.text = item.GetItemDescription(currentLevel);
     }
 
@@ -38,11 +42,11 @@ public class NewItemModal : MonoBehaviour
         itemIcon.sprite = item.icon;
 
         int currentLevel = DataManager.instance.GetItemLevel(item.KEY);
-        item_name.text = item.itemName + $" (Lv.{currentLevel + 1})";
-        upgradeBtn_title.text = $"UPGRADE ({item.upgradeCost[currentLevel]}G)";
+        item_name.text = item.itemName.GetLocalizedString() + $" (Lv.{currentLevel + 1})";
+        upgradeBtn_title.text = upgrade.GetLocalizedString() + $" ({item.upgradeCost[currentLevel]}G)";
         item_description.text = item.GetItemDescription(currentLevel);
         upgradeBtn_description.text = item.GetUpgradeDescription(currentLevel);
-        sellBtn_title.text = $"SELL ({item.itemPrice}G)";
+        sellBtn_title.text = sell.GetLocalizedString()+ $" ({item.itemPrice}G)";
     }
 
     public void UpgradeItem()
