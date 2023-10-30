@@ -10,24 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: ScriptsTable_en
+  m_Name: ETC_ja
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en
-  m_SharedData: {fileID: 11400000, guid: 68cd2b3d53db53c468928dcf54144bc4, type: 2}
+    m_Code: ja
+  m_SharedData: {fileID: 11400000, guid: b915730b311c9554aa885908fc51df5c, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 14907645952
-    m_Localized: Upgrade
+  - m_Id: 1739844526080
+    m_Localized: "\u8CA9\u58F2"
     m_Metadata:
       m_Items: []
-  - m_Id: 1021536411648
-    m_Localized: Sell
+  - m_Id: 1451314159616
+    m_Localized: "\u8CA9\u58F2"
     m_Metadata:
       m_Items: []
-  - m_Id: 1159222829056
-    m_Localized: Next Item value
+  - m_Id: 1230513414144
+    m_Localized: "\u5F37\u5316"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2094946885632
+    m_Localized: "\u5F37\u5316\u5F8C\u80FD\u529B\u5024"
     m_Metadata:
       m_Items: []
   references:

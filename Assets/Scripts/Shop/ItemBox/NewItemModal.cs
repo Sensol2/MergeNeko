@@ -14,9 +14,8 @@ public class NewItemModal : MonoBehaviour
     public Image itemIcon;
     public TMP_Text item_name;
     public TMP_Text item_description;
-    public LocalizedString upgrade = new LocalizedString { TableReference = "ScriptsTable", TableEntryReference = "upgrade" };
-    public LocalizedString sell = new LocalizedString { TableReference = "ScriptsTable", TableEntryReference = "sell" };
-
+    public LocalizedString upgrade = new LocalizedString { TableReference = "ETC", TableEntryReference = "upgrade" };
+    public LocalizedString sell = new LocalizedString { TableReference = "ETC", TableEntryReference = "sell" };
     public TMP_Text upgradeBtn_title;
     public TMP_Text upgradeBtn_description;
     public TMP_Text sellBtn_title;
@@ -46,7 +45,9 @@ public class NewItemModal : MonoBehaviour
         upgradeBtn_title.text = upgrade.GetLocalizedString() + $" ({item.upgradeCost[currentLevel]}G)";
         item_description.text = item.GetItemDescription(currentLevel);
         upgradeBtn_description.text = item.GetUpgradeDescription(currentLevel);
+        // upgradeBtn_description.transform.
         sellBtn_title.text = sell.GetLocalizedString()+ $" ({item.itemPrice}G)";
+        Debug.Log(" 마지막 예정");
     }
 
     public void UpgradeItem()

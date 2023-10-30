@@ -35,8 +35,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     - Preload
-  - m_GUID: ae8cc12a42e90dd439b6c59eb2797cca
-    m_Address: ScriptsTable_en
+  - m_GUID: c9c5068248be3cc4589396ef45310d7f
+    m_Address: ETC_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

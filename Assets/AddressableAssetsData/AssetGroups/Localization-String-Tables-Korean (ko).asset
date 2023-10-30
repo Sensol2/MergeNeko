@@ -35,8 +35,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ko
     - Preload
-  - m_GUID: 435247f1416a22044b53da092eef230f
-    m_Address: ScriptsTable_ko
+  - m_GUID: 25dc5b97498bc464eafe80cf24906817
+    m_Address: ETC_ko
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ko
