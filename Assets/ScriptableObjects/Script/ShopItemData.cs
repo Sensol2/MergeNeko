@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.Localization;
 
-//°¡Àå ±âº»ÀûÀÎ ³»¿ëÀ» ´ã°í ÀÖ´Â Shop data.
-//Effect Data µîÀÇ ºÎ¸ğ°¡ µÊ
+//ê°€ì¥ ê¸°ë³¸ì ì¸ ë‚´ìš©ì„ ë‹´ê³  ìˆëŠ” Shop data.
+//Effect Data ë“±ì˜ ë¶€ëª¨ê°€ ë¨
 
 [CreateAssetMenu(fileName = "ShopItemData", menuName = "Scriptable Object/ShopItemData", order = int.MaxValue)]
 public class ShopItemData : ScriptableObject
 {
     [SerializeField]
     public Sprite icon;
-    public string itemName;
+    public LocalizedString itemName;
+    public LocalizedString itemDescription;
 
     [TextArea]
-    public string itemDescription;
     public int itemPrice;
 }

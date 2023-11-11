@@ -6,7 +6,7 @@ public class DataManager : MonoBehaviour
 {
     static public DataManager instance;
 
-    // PlayerPrefs¿¡ »ç¿ëÇÒ Å°µé
+    // PlayerPrefsì— ì‚¬ìš©í•  í‚¤ë“¤
     private const string GEM_KEY = "GemKey";
     private const string EQUIPPED_EFFECT_KEY = "EquippedEffectKey";
 
@@ -21,7 +21,7 @@ public class DataManager : MonoBehaviour
     }
 
 
-    // 1. Gem °ü·Ã ÇÔ¼ö
+    // 1. Gem ê´€ë ¨ í•¨ìˆ˜
     public void SetGem(int value)
     {
         PlayerPrefs.SetInt(GEM_KEY, value);
@@ -29,10 +29,10 @@ public class DataManager : MonoBehaviour
 
     public int GetGem()
     {
-        return PlayerPrefs.GetInt(GEM_KEY, 0); // ±âº» °ªÀº 0
+        return PlayerPrefs.GetInt(GEM_KEY, 0); // ê¸°ë³¸ ê°’ì€ 0
     }
 
-    // 2. item º¸À¯ ¿©ºÎ ÀúÀå
+    // 2. item ë³´ìœ  ì—¬ë¶€ ì €ì¥
     public void SetItemCount(string key, int value)
     {
         PlayerPrefs.SetInt(key, value);
@@ -52,7 +52,7 @@ public class DataManager : MonoBehaviour
 
     public bool HasItem(string key)
     {
-        return PlayerPrefs.GetInt(key) > 0; // ±âº» °ªÀº false
+        return PlayerPrefs.GetInt(key) > 0; // ê¸°ë³¸ ê°’ì€ false
     }
 
     public int GetItemCount(string key)
@@ -60,7 +60,7 @@ public class DataManager : MonoBehaviour
         return PlayerPrefs.GetInt(key);
     }
 
-    // 3. item level ÀúÀå
+    // 3. item level ì €ì¥
     private string GetItemLevelKey(string key)
     {
         return key + "_Level";
@@ -75,7 +75,7 @@ public class DataManager : MonoBehaviour
     public int GetItemLevel(string key)
     {
         string levelKey = GetItemLevelKey(key);
-        return PlayerPrefs.GetInt(levelKey, 0); // ±âº» ·¹º§Àº 1·Î ¼³Á¤
+        return PlayerPrefs.GetInt(levelKey, 0); // ê¸°ë³¸ ë ˆë²¨ì€ 1ë¡œ ì„¤ì •
     }
 
     public void UpgradeItemLevel(string key)
@@ -84,7 +84,7 @@ public class DataManager : MonoBehaviour
         SetItemLevel(key, currentLevel + 1);
     }
 
-    // 4. ÀåÂø È¿°ú ÀúÀå
+    // 4. ì¥ì°© íš¨ê³¼ ì €ì¥
     public void SetEquippedEffect(EffectType effectType)
     {
         PlayerPrefs.SetInt(EQUIPPED_EFFECT_KEY, (int)effectType);

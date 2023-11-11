@@ -13,9 +13,24 @@ MonoBehaviour:
   m_Name: CatBox
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: c0e2b1aa419f0a5449f35b933a628418, type: 3}
-  itemName: Big box
-  itemDescription: ' It''s a box that makes you want to hide. The duration of fever
-    time extends by <color=#92d4f4><b>+{0}</b></color>.'
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d266cea5ef2242439f2cdd0306ae815
+    m_TableEntryReference:
+      m_KeyId: 4716638543872
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  itemDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d266cea5ef2242439f2cdd0306ae815
+    m_TableEntryReference:
+      m_KeyId: 2770141749248
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   itemPrice: 100
   KEY: GAMEITEM_CATBOX
   itemRank: 0
@@ -28,3 +43,6 @@ MonoBehaviour:
   - 1.5
   - 2
   - 2.5
+  references:
+    version: 2
+    RefIds: []

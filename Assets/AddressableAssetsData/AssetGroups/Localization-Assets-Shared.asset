@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-Assets-Shared
+  m_Data:
+    m_SerializedData: []
+  m_GUID: c4f253af5fefba14cb5545f4cbec350a
+  m_SerializeEntries:
+  - m_GUID: 2a6e08b6fc115c84eb5617210a0f4cc6
+    m_Address: Assets/Languages/Shop Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: e883816370525a84d8362d5070662200
+    m_Address: Assets/Languages/Ingame/Ingame-settings Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 5d266cea5ef2242439f2cdd0306ae815
+    m_Address: Assets/Languages/Inventory/Inventory Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: b915730b311c9554aa885908fc51df5c
+    m_Address: Assets/Languages/ETC/ETC Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 646f4573446f64448aacc6ebffc805c0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f05484d1c6ca3924280d770913cd893b, type: 2}
+    - {fileID: 11400000, guid: 90226e3d82bcac3428359d92f013cc21, type: 2}

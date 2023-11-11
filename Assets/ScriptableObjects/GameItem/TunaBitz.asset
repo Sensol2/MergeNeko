@@ -13,9 +13,24 @@ MonoBehaviour:
   m_Name: TunaBitz
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: d746403fba7ffd14d8cc3d5f7db4f94d, type: 3}
-  itemName: TunaBitz
-  itemDescription: It's a nutritious canned food. With a <color=#92d4f4><b>+{0}%</b></color>
-    chance of appearing, it can merge with any cat upon contact.
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d266cea5ef2242439f2cdd0306ae815
+    m_TableEntryReference:
+      m_KeyId: 5107589619712
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  itemDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d266cea5ef2242439f2cdd0306ae815
+    m_TableEntryReference:
+      m_KeyId: 3536411729920
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   itemPrice: 150
   KEY: GAMEITEM_TUNABITZ
   itemRank: 1
@@ -28,3 +43,6 @@ MonoBehaviour:
   - 5
   - 7
   - 10
+  references:
+    version: 2
+    RefIds: []

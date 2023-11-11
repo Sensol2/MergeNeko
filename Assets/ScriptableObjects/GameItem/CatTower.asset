@@ -13,9 +13,24 @@ MonoBehaviour:
   m_Name: CatTower
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: d2be97c8b9f5ba645a1bcb819ee86159, type: 3}
-  itemName: Cat Tower
-  itemDescription: Like a cat that loves high places, the game-over limit line height
-    increases by <color=#92d4f4><b>+{0}</b></color>.
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d266cea5ef2242439f2cdd0306ae815
+    m_TableEntryReference:
+      m_KeyId: 4828546768896
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  itemDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:e883816370525a84d8362d5070662200
+    m_TableEntryReference:
+      m_KeyId: 11848360435712
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   itemPrice: 100
   KEY: GAMEITEM_CATTOWER
   itemRank: 0
@@ -28,3 +43,6 @@ MonoBehaviour:
   - 0.3
   - 0.4
   - 0.5
+  references:
+    version: 2
+    RefIds: []

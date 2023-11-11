@@ -712,6 +712,31 @@ MonoBehaviour:
   itemIcon: {fileID: 1854674607765024353}
   item_name: {fileID: 1854674607345591443}
   item_description: {fileID: 1854674607430211374}
+  upgrade:
+    m_TableReference:
+      m_TableCollectionName: ETC
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: upgrade
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  sell:
+    m_TableReference:
+      m_TableCollectionName: ETC
+    m_TableEntryReference:
+      m_KeyId: 1739844526080
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  upgradeBtn_title: {fileID: 0}
+  upgradeBtn_description: {fileID: 0}
+  sellBtn_title: {fileID: 0}
+  closeModal: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &2440145149563975885
 GameObject:
   m_ObjectHideFlags: 0

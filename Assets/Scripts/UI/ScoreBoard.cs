@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using GameAnalyticsSDK;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
 using Unity.VisualScripting;
@@ -35,16 +36,16 @@ public class ScoreBoard : MonoBehaviour
         GameOverZone.OnGameOver += DisplayScoreBoard;
     }
 
-    //todo : ¥›±‚ Ω√ GameOverZone.OnGameOver -= DisplayScoreBoard;
+    //todo : Îã´Í∏∞ Ïãú GameOverZone.OnGameOver -= DisplayScoreBoard;
     public void DisplayScoreBoard()
     {
-        //¡°ºˆ ∞ËªÍ
+        //Ï†êÏàò Í≥ÑÏÇ∞
         CalculateScore();
 
-        //Gem ∞ËªÍ
+        //Gem Í≥ÑÏÇ∞
         CalculateGem();
-
-        //±‚≈∏ ¡§∫∏
+        
+        //Í∏∞ÌÉÄ Ï†ïÎ≥¥
         timeText.text = "TIME: " + GameManager.instance.GetTimerText();
         maxComboText.text = "COMBO: " + ComboManager.instance.maxCombo.ToString();
         mergedCatText.text = "MERGED CATS: " + Cat.mergedCats.ToString();
@@ -68,6 +69,7 @@ public class ScoreBoard : MonoBehaviour
             info_yarn.transform.Find("Description").GetComponent<TMP_Text>().text = $"Bonus score: +{bonusScore}";
         }
         resultScore.text = score.ToString();
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "Ingame",ScoreManager.instance.GetScore() );
     }
 
     private void CalculateGem()

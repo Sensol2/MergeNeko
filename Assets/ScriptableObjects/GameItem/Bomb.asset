@@ -13,9 +13,24 @@ MonoBehaviour:
   m_Name: Bomb
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 677070579fa533d40bdf8a8f2895acf7, type: 3}
-  itemName: Bomb
-  itemDescription: Be careful of explosions! With a <color=#92d4f4><b>+{0}%</b></color>
-    chance of appearing, it explodes on contact, pushing the cats away.
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d266cea5ef2242439f2cdd0306ae815
+    m_TableEntryReference:
+      m_KeyId: 4585956614144
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  itemDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d266cea5ef2242439f2cdd0306ae815
+    m_TableEntryReference:
+      m_KeyId: 2157593010176
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   itemPrice: 150
   KEY: GAMEITEM_BOMB
   itemRank: 1
@@ -28,3 +43,6 @@ MonoBehaviour:
   - 5
   - 7
   - 10
+  references:
+    version: 2
+    RefIds: []

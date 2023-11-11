@@ -714,10 +714,31 @@ MonoBehaviour:
   itemIcon: {fileID: 1854674607765024353}
   item_name: {fileID: 1854674607345591443}
   item_description: {fileID: 1854674607430211374}
+  upgrade:
+    m_TableReference:
+      m_TableCollectionName: GUID:b915730b311c9554aa885908fc51df5c
+    m_TableEntryReference:
+      m_KeyId: 1230513414144
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  sell:
+    m_TableReference:
+      m_TableCollectionName: GUID:b915730b311c9554aa885908fc51df5c
+    m_TableEntryReference:
+      m_KeyId: 1451314159616
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   upgradeBtn_title: {fileID: 3893510383417047739}
   upgradeBtn_description: {fileID: 3848311826927979214}
   sellBtn_title: {fileID: 1854674607032721995}
   closeModal: {fileID: 3300801329334606181}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &3300801329334606181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1099,7 +1120,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

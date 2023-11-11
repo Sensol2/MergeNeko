@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Inventory_ko
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: ko
+  m_SharedData: {fileID: 11400000, guid: 5d266cea5ef2242439f2cdd0306ae815, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2157593010176
+    m_Localized: "\uD3ED\uBC1C\uC744 \uC870\uC2EC\uD558\uC138\uC694! <color=#92d4f4><b>+{0}%</b></color>
+      \uB4F1\uC7A5 \uD655\uB960\uB85C \uC811\uCD09 \uC2DC \uD3ED\uBC1C\uD558\uC5EC
+      \uACE0\uC591\uC774\uB97C \uBC00\uC5B4\uB0C5\uB2C8\uB2E4."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2770141749248
+    m_Localized: "\uC228\uACE0 \uC2F6\uAC8C \uB9CC\uB4DC\uB294 \uC0C1\uC790\uB124\uC694.
+      \uD53C\uBC84 \uD0C0\uC784 \uC9C0\uC18D \uC2DC\uAC04\uC774 <color=#92d4f4><b>+{0}</b></color>\uB9CC\uD07C
+      \uC5F0\uC7A5\uB429\uB2C8\uB2E4."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3380597530624
+    m_Localized: "\uD589\uC6B4\uC758 \uBD80\uC801\uC785\uB2C8\uB2E4. \uAC8C\uC784
+      \uC885\uB8CC \uC2DC \uD68D\uB4DD\uD558\uB294 \uACE8\uB4DC\uAC00 <color=#92d4f4><b>+{0}</b></color>%
+      \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3536411729920
+    m_Localized: "\uC601\uC591\uAC00 \uB192\uC740 \uD1B5\uC870\uB9BC \uC2DD\uD488\uC785\uB2C8\uB2E4.
+      <color=#92d4f4><b>+{0}%</b></color> \uCD9C\uD604 \uD655\uB960\uB85C \uC811\uCD09
+      \uC2DC \uC5B4\uB5A4 \uACE0\uC591\uC774\uC640\uB3C4 \uD569\uCCD0\uC9C8 \uC218
+      \uC788\uC2B5\uB2C8\uB2E4."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3717270118400
+    m_Localized: "\uAD74\uB9AC\uAE30 \uC88B\uC544\uBCF4\uC774\uB294 \uC2E4\uD0C0\uB798\uC785\uB2C8\uB2E4.
+      \uAC8C\uC784 \uC885\uB8CC \uC2DC \uCD5C\uACE0 \uC810\uC218\uAC00 <color=#92d4f4><b>+{0}%</b></color>
+      \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4585956614144
+    m_Localized: "\uD3ED\uD0C4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4716638543872
+    m_Localized: "\uACE0\uC591\uC774 \uC0C1\uC790"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4828546768896
+    m_Localized: "\uCEA3\uD0C0\uC6CC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4963540443136
+    m_Localized: "\uC7A5\uB09C\uAC10 \uC950"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5107589619712
+    m_Localized: "\uCC38\uCE58\uCE94"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5935553617920
+    m_Localized: "\uC2E4\uD0C0\uB798"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

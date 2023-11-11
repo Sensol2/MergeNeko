@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
 
 public class NewItemModal : MonoBehaviour
 {
@@ -12,11 +14,11 @@ public class NewItemModal : MonoBehaviour
     public Image itemIcon;
     public TMP_Text item_name;
     public TMP_Text item_description;
-
+    public LocalizedString upgrade = new LocalizedString { TableReference = "ETC", TableEntryReference = "upgrade" };
+    public LocalizedString sell = new LocalizedString { TableReference = "ETC", TableEntryReference = "sell" };
     public TMP_Text upgradeBtn_title;
     public TMP_Text upgradeBtn_description;
     public TMP_Text sellBtn_title;
-
 
     public CloseModal closeModal;
 
@@ -27,7 +29,8 @@ public class NewItemModal : MonoBehaviour
         itemIcon.sprite = item.icon;
 
         int currentLevel = DataManager.instance.GetItemLevel(item.KEY);
-        item_name.text = item.itemName;
+        item_name.text = item.itemName.GetLocalizedString();
+        Debug.Log(item.itemName.GetLocalizedString());
         item_description.text = item.GetItemDescription(currentLevel);
     }
 
@@ -38,11 +41,13 @@ public class NewItemModal : MonoBehaviour
         itemIcon.sprite = item.icon;
 
         int currentLevel = DataManager.instance.GetItemLevel(item.KEY);
-        item_name.text = item.itemName + $" (Lv.{currentLevel + 1})";
-        upgradeBtn_title.text = $"UPGRADE ({item.upgradeCost[currentLevel]}G)";
+        item_name.text = item.itemName.GetLocalizedString() + $" (Lv.{currentLevel + 1})";
+        upgradeBtn_title.text = upgrade.GetLocalizedString() + $" ({item.upgradeCost[currentLevel]}G)";
         item_description.text = item.GetItemDescription(currentLevel);
         upgradeBtn_description.text = item.GetUpgradeDescription(currentLevel);
-        sellBtn_title.text = $"SELL ({item.itemPrice}G)";
+        // upgradeBtn_description.transform.
+        sellBtn_title.text = sell.GetLocalizedString()+ $" ({item.itemPrice}G)";
+        Debug.Log(" ÎßàÏßÄÎßâ ÏòàÏ†ï");
     }
 
     public void UpgradeItem()
@@ -52,12 +57,12 @@ public class NewItemModal : MonoBehaviour
 
         if (gem < item.upgradeCost[currentLevel])
         {
-            Debug.Log("µ∑¿Ã ∫Œ¡∑«’¥œ¥Ÿ.");
+            Debug.Log("ÎèàÏù¥ Î∂ÄÏ°±Ìï©ÎãàÎã§.");
             return;
         }
         else if (currentLevel + 1 >= item.maxLevel)
         {
-            Debug.Log("√÷¥Î ∑π∫ß¿‘¥œ¥Ÿ.");
+            Debug.Log("ÏµúÎåÄ Î†àÎ≤®ÏûÖÎãàÎã§.");
             return;
         }
         else
@@ -66,7 +71,7 @@ public class NewItemModal : MonoBehaviour
             DataManager.instance.UpgradeItemLevel(item.KEY);
             GameObject.Find("GemTextArea").GetComponent<DisplayGem>().UpdateGemText();
             closeModal.DestroyModalUI();
-            Debug.Log("±∏∏≈øœ∑·");
+            Debug.Log("Íµ¨Îß§ÏôÑÎ£å");
         }
     }
 
@@ -81,7 +86,7 @@ public class NewItemModal : MonoBehaviour
             itemInfo.UpdateSlotUI();
             GameObject.Find("GemTextArea").GetComponent<DisplayGem>().UpdateGemText();
             closeModal.DestroyModalUI();
-            Debug.Log("∆«∏≈øœ∑·");
+            Debug.Log("ÌåêÎß§ÏôÑÎ£å");
         }
     }
 

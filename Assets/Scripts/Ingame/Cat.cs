@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -131,17 +132,20 @@ public class Cat : MonoBehaviour
 
 	private void DestroyAllCats()
 	{
-        DestroyCat(gameObject);
+        DestroyCat(gameObject, true);
 	}
 
-	public void DestroyCat(GameObject obj)
+	public void DestroyCat(GameObject obj, bool isGameover = false)
 	{
-        // 피버타임 List에서 제거
+		// 피버타임 List에서 제거
         PhysicsController.instance.RemoveCat(rigid);
 
         // 이펙트 생성
         VFXManager.instance.GenerateEffect(gameObject.transform.position);
-		SoundManager.instance.PlaySound(SoundType.NYA);
+        if (!isGameover)
+        {
+	        SoundManager.instance.PlaySound(SoundType.NYA);
+        }
 
         // 최대 레벨 갱신
         LevelManager.instance.UpdateLevel(level + 1);

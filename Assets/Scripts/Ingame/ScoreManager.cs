@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameAnalyticsSDK;
+using GameAnalyticsSDK.Events;
 using TMPro;
 public class ScoreManager : MonoBehaviour
 {
@@ -15,7 +17,7 @@ public class ScoreManager : MonoBehaviour
     private int score;
     private int feverScore;
 
-    // ÇÇ¹öÅ¸ÀÓ ÀÌº¥Æ®
+    // í”¼ë²„íƒ€ì„ ì´ë²¤íŠ¸
     public GameItem item_box;
 
     public FeverTimeUI feverTimeUI;
@@ -29,7 +31,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("°ÔÀÓ½ÃÀÛ");
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Ingame");
         SetFevertimeDuration();
         GameOverZone.OnGameOver += DisableFeverTime;
     }
@@ -66,10 +68,10 @@ public class ScoreManager : MonoBehaviour
     }
 
     // ==========
-    // ÇÇ¹öÅ¸ÀÓ °ü·Ã
+    // í”¼ë²„íƒ€ì„ ê´€ë ¨
     public void SetFevertimeDuration()
     {
-        if (DataManager.instance.HasItem(item_box.KEY)) //Box ¾ÆÀÌÅÛ È¿°ú·Î ÇÇ¹öÅ¸ÀÓ Áö¼Ó½Ã°£ Áõ°¡
+        if (DataManager.instance.HasItem(item_box.KEY)) //Box ì•„ì´í…œ íš¨ê³¼ë¡œ í”¼ë²„íƒ€ì„ ì§€ì†ì‹œê°„ ì¦ê°€
         {
             int level = DataManager.instance.GetItemLevel(item_box.KEY);
             float bonusSecond = item_box.effectValues[level];

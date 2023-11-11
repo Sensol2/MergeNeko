@@ -4,7 +4,7 @@ using DG.Tweening;
 
 public class SceneTransition : MonoBehaviour
 {
-    public float transitionTime = 1f; // ÆäÀÌµå ÀÎ/¾Æ¿ô¿¡ °É¸®´Â ½Ã°£
+    public float transitionTime = 1f; // í˜ì´ë“œ ì¸/ì•„ì›ƒì— ê±¸ë¦¬ëŠ” ì‹œê°„
 
     public Image image;
     private void Awake()

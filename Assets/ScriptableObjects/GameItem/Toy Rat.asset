@@ -13,9 +13,24 @@ MonoBehaviour:
   m_Name: Toy Rat
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: ec59d0e8544ec054ba40d30b823a1194, type: 3}
-  itemName: Toy Rat
-  itemDescription: It's a lucky charm. It increases the gold you earn at the end
-    of the game by <color=#92d4f4><b>+{0}</b></color>%.
+  itemName:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d266cea5ef2242439f2cdd0306ae815
+    m_TableEntryReference:
+      m_KeyId: 4963540443136
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  itemDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:5d266cea5ef2242439f2cdd0306ae815
+    m_TableEntryReference:
+      m_KeyId: 3380597530624
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   itemPrice: 100
   KEY: GAMEITEM_TOYRAT
   itemRank: 0
@@ -28,3 +43,6 @@ MonoBehaviour:
   - 5
   - 7
   - 10
+  references:
+    version: 2
+    RefIds: []

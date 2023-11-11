@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // √ﬂ∞°
+using UnityEngine.UI; // Ï∂îÍ∞Ä
 
 public enum SoundType { NYA, PIT, BOMB }
 
@@ -16,7 +17,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip pit;
     public AudioClip bomb;
 
-    // ΩΩ∂Û¿Ã¥ı ¬¸¡∂ √ﬂ∞°
+    // Ïä¨ÎùºÏù¥Îçî Ï∞∏Ï°∞ Ï∂îÍ∞Ä
     public Slider musicVolumeSlider;
     public Slider soundEffectVolumeSlider;
 
@@ -28,22 +29,22 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        // √ ±‚ ∫º∑˝ º≥¡§
+        // Ï¥àÍ∏∞ Î≥ºÎ•® ÏÑ§Ï†ï
         BGMusic.volume = musicVolumeSlider.value * 0.2f; // 0.2f is a scaling factor assuming the max slider value is 5
         soundEffect.volume = soundEffectVolumeSlider.value * 0.2f;
 
-        // ΩΩ∂Û¿Ã¥ı ¿Ã∫•∆Æ √ﬂ∞°
+        // Ïä¨ÎùºÏù¥Îçî Ïù¥Î≤§Ìä∏ Ï∂îÍ∞Ä
         musicVolumeSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
         soundEffectVolumeSlider.onValueChanged.AddListener(OnSoundEffectVolumeChanged);
     }
 
-    // ¿Ωæ« ∫º∑˝ ∫Ø∞Ê
+    // ÏùåÏïÖ Î≥ºÎ•® Î≥ÄÍ≤Ω
     public void OnMusicVolumeChanged(float value)
     {
         BGMusic.volume = value * 0.2f;
     }
 
-    // »ø∞˙¿Ω ∫º∑˝ ∫Ø∞Ê
+    // Ìö®Í≥ºÏùå Î≥ºÎ•® Î≥ÄÍ≤Ω
     public void OnSoundEffectVolumeChanged(float value)
     {
         soundEffect.volume = value * 0.2f;
@@ -55,9 +56,15 @@ public class SoundManager : MonoBehaviour
     {
         switch (type)
         {
-            case SoundType.PIT: soundEffect.PlayOneShot(pit); break;
-            case SoundType.NYA: soundEffect.PlayOneShot(nya); break;
-            case SoundType.BOMB: soundEffect.PlayOneShot(bomb); break;
+            case SoundType.PIT:
+                soundEffect.PlayOneShot(pit);
+                break;
+            case SoundType.NYA:
+                soundEffect.PlayOneShot(nya);
+                break;
+            case SoundType.BOMB:
+                soundEffect.PlayOneShot(bomb);
+                break;
         }
     }
 }
